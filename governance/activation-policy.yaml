@@ -1,0 +1,179 @@
+version: 1
+
+activation_policy:
+
+  purpose: >
+    Define when cognitive governance should activate,
+    how strongly it should intervene,
+    and which governance layers should participate.
+
+  activation_model:
+
+    philosophy: >
+      Governance should activate proportionally to
+      architectural risk, operational ambiguity,
+      and complexity exposure.
+
+    avoid:
+      - constant_governance_noise
+      - unnecessary_intervention
+      - overblocking_low_risk_tasks
+      - governance_bureaucracy
+
+  activation_layers:
+
+    cognitive:
+      description: >
+        Influences reasoning, planning, architecture,
+        and complexity evaluation.
+
+      artifacts:
+        - FOUNDATION.md
+        - SKILL.md
+        - AGENTS.md
+        - governance/planner-rules.yaml
+
+    runtime:
+      description: >
+        Restricts runtime behavior, execution boundaries,
+        memory mutation, and operational risk.
+
+      artifacts:
+        - governance/runtime-policy.yaml
+
+    evolutionary:
+      description: >
+        Governs how skills evolve over time,
+        including review, expansion, and automation readiness.
+
+      artifacts:
+        - reviews/checklist.md
+        - skills/templates/skill-charter.template.md
+
+  activation_triggers:
+
+    high_priority:
+      - multi_agent_design
+      - orchestration_proposals
+      - distributed_memory
+      - vector_database_introduction
+      - rag_pipeline_design
+      - autonomous_execution
+      - runtime_scope_expansion
+      - recursive_agent_patterns
+      - hidden_state_proposals
+      - self_modifying_behavior
+
+    medium_priority:
+      - new_skill_creation
+      - skill_upgrade
+      - planner_design
+      - runtime_policy_changes
+      - memory_strategy_changes
+      - tooling_expansion
+      - automation_proposals
+      - architecture_refactoring
+
+    low_priority:
+      - formatting_changes
+      - wording_updates
+      - documentation_cleanup
+      - minor_structural_adjustments
+
+  intervention_levels:
+
+    advisory:
+      behavior:
+        - suggest_simplification
+        - expose_tradeoffs
+        - recommend_review
+
+    warning:
+      behavior:
+        - highlight_complexity_risk
+        - request_justification
+        - recommend_human_review
+
+    restrictive:
+      behavior:
+        - recommend_scope_reduction
+        - reject_unbounded_complexity
+        - block_unsafe_automation_patterns
+
+    escalation:
+      behavior:
+        - require_human_confirmation
+        - require_architectural_review
+        - defer_high_risk_decisions
+
+  activation_scoring:
+
+    increase_score_if:
+      - architecture_becomes_harder_to_reason_about
+      - orchestration_increases
+      - hidden_state_is_introduced
+      - operational_boundaries_are_unclear
+      - automation_precedes_stability
+      - runtime_side_effects_expand
+      - dependency_count_grows
+      - cognitive_load_increases
+
+    decrease_score_if:
+      - architecture_is_simplified
+      - dependencies_are_removed
+      - workflows_become_explicit
+      - reasoning_becomes_localized
+      - human_auditability_improves
+      - runtime_scope_reduces
+
+  complexity_budget:
+
+    principle: >
+      Complexity must remain proportional to
+      the operational problem being solved.
+
+    reject_if:
+      - solution_complexity_exceeds_problem_complexity
+      - orchestration_exists_without_clear_need
+      - governance_overhead_exceeds_operational_value
+      - architecture_requires_excessive_explanation
+
+  contextual_behavior:
+
+    lightweight_mode:
+      applies_to:
+        - editing
+        - formatting
+        - low_risk_updates
+
+      behavior:
+        - minimize_governance_interruption
+        - avoid_overanalysis
+
+    governance_mode:
+      applies_to:
+        - architecture_design
+        - runtime_design
+        - automation_design
+        - skill_definition
+        - orchestration_changes
+
+      behavior:
+        - activate_full_governance_review
+        - evaluate_complexity_budget
+        - evaluate_runtime_risk
+        - evaluate_human_governance
+
+  escalation_rules:
+
+    require_human_review_if:
+      - destructive_runtime_behavior_exists
+      - irreversible_side_effects_exist
+      - autonomous_background_execution_exists
+      - architecture_scope_expands_significantly
+      - persistent_hidden_memory_is_introduced
+      - governance_boundaries_become_unclear
+
+  final_principle: >
+    Governance should guide reasoning proportionally,
+    not become bureaucratic overhead.
