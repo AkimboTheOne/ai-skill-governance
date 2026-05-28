@@ -1,3 +1,8 @@
+---
+name: ai-skill-governance
+description: Governance skill for designing, reviewing, and evolving AI skills, AGENTS.md instructions, planner rules, runtime policies, activation semantics, memory strategy, tool usage, automation readiness, orchestration, RAG, vector databases, multi-agent behavior, and human-governable AI systems. Use before implementation planning when work may increase architecture, runtime behavior, hidden state, tooling, automation, or operational complexity.
+---
+
 # AI Skill Governance
 
 ## Description
@@ -246,6 +251,8 @@ This skill is responsible for:
 - challenging premature automation,
 - preserving human auditability,
 - recommending simpler alternatives,
+- identifying doctrinal promotion candidates when local learnings may improve
+  canonical skill doctrine,
 - and keeping governance artifacts consistent.
 
 ---
@@ -284,6 +291,8 @@ whether such additions are justified.
 - Preserve human visibility, auditability, reversibility, and override capability.
 - Keep state, policies, and memory human-readable unless a stronger operational need
   is documented.
+- Do not promote local or global memory into canonical skill memory without
+  explicit human approval.
 
 ---
 
@@ -321,7 +330,8 @@ This skill relies on these canonical artifacts:
 - [reviews/checklist.md](reviews/checklist.md) for review criteria,
 - [skills/templates/skill-charter.template.md](skills/templates/skill-charter.template.md)
   for future skill charters,
-- [memory/README.md](memory/README.md) for memory boundaries,
+- [memory/README.md](memory/README.md) for memory boundaries, precedence, and
+  doctrinal promotion candidate handling,
 - and [references/README.md](references/README.md) for governed reference material.
 
 Root-level duplicates of governed policies should not be created.

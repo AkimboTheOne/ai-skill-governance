@@ -149,7 +149,7 @@ subdirectories listed above.
 | [governance/activation-policy.yaml](governance/activation-policy.yaml) | Defines when and how governance activates. |
 | [reviews/checklist.md](reviews/checklist.md) | Defines review criteria before implementation or automation. |
 | [skills/templates/skill-charter.template.md](skills/templates/skill-charter.template.md) | Defines the standard charter for future skills. |
-| [memory/README.md](memory/README.md) | Defines the boundary between canonical and installation memory. |
+| [memory/README.md](memory/README.md) | Defines memory boundaries, precedence, and doctrinal promotion candidate handling. |
 | [references/README.md](references/README.md) | Defines how stable references may be added without creating uncontrolled context. |
 
 ---
@@ -164,7 +164,8 @@ delegate detail to the canonical artifacts.
 The `governance/` files define planner, runtime, and activation policy.
 
 The `reviews/`, `skills/templates/`, `memory/`, and `references/` directories
-support review, future skill creation, memory boundaries, and governed references.
+support review, future skill creation, memory boundaries, precedence, doctrinal
+promotion, and governed references.
 
 ---
 

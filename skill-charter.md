@@ -52,6 +52,8 @@ This skill is responsible for:
 - identifying unnecessary complexity,
 - challenging premature automation,
 - preserving human auditability,
+- identifying doctrinal promotion candidates when local learnings may improve
+  canonical skill doctrine,
 - and keeping governance artifacts consistent.
 
 ---
