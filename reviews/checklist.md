@@ -182,6 +182,9 @@ Automate only systems that are already operationally valid.
 - [ ] Is memory mutation explicit?
 - [ ] Is memory scope bounded?
 - [ ] Is persistent state operationally justified?
+- [ ] Does repo-local memory take precedence over global user memory?
+- [ ] Does canonical memory promotion require explicit human approval?
+- [ ] Is local preference prevented from becoming general doctrine?
 
 ---
 

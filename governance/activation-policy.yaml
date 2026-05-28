@@ -68,7 +68,11 @@ activation_policy:
       - RAG
       - retrieval
       - vector database
+      - memory
       - persistent memory
+      - memory precedence
+      - global user memory
+      - doctrinal promotion
       - background agent
       - recursive agent
       - tool chain
