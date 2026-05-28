@@ -31,6 +31,7 @@ activation_policy:
         - FOUNDATION.md
         - SKILL.md
         - AGENTS.md
+        - skill-charter.md
         - governance/planner-rules.yaml
 
     runtime:
@@ -40,6 +41,7 @@ activation_policy:
 
       artifacts:
         - governance/runtime-policy.yaml
+        - memory/README.md
 
     evolutionary:
       description: >
@@ -49,8 +51,30 @@ activation_policy:
       artifacts:
         - reviews/checklist.md
         - skills/templates/skill-charter.template.md
+        - references/README.md
 
   activation_triggers:
+
+    concrete_terms:
+      - skill
+      - SKILL.md
+      - AGENTS.md
+      - planner rules
+      - runtime policy
+      - activation conditions
+      - automation
+      - orchestration
+      - multi-agent
+      - RAG
+      - retrieval
+      - vector database
+      - persistent memory
+      - background agent
+      - recursive agent
+      - tool chain
+      - governance
+      - auditability
+      - human override
 
     high_priority:
       - multi_agent_design
@@ -80,6 +104,33 @@ activation_policy:
       - documentation_cleanup
       - minor_structural_adjustments
 
+  priority_to_intervention:
+
+    high_priority:
+      default: restrictive
+      escalate_to: blocking
+      applies_when:
+        - hidden_state_is_introduced
+        - automation_precedes_stability
+        - runtime_side_effects_expand
+        - recursive_or_autonomous_behavior_is_proposed
+
+    medium_priority:
+      default: governing
+      escalate_to: restrictive
+      applies_when:
+        - architecture_scope_expands
+        - tool_or_memory_strategy_changes
+        - planner_or_runtime_policy_changes
+
+    low_priority:
+      default: advisory
+      may_suppress: true
+      applies_when:
+        - changes_are_non_behavioral
+        - runtime_boundaries_do_not_change
+        - activation_semantics_do_not_change
+
   intervention_levels:
 
     advisory:
@@ -88,11 +139,12 @@ activation_policy:
         - expose_tradeoffs
         - recommend_review
 
-    warning:
+    governing:
       behavior:
+        - apply_mandatory_engineering_order
+        - validate_scope_boundaries
         - highlight_complexity_risk
         - request_justification
-        - recommend_human_review
 
     restrictive:
       behavior:
@@ -100,7 +152,7 @@ activation_policy:
         - reject_unbounded_complexity
         - block_unsafe_automation_patterns
 
-    escalation:
+    blocking:
       behavior:
         - require_human_confirmation
         - require_architectural_review
@@ -145,6 +197,9 @@ activation_policy:
         - editing
         - formatting
         - low_risk_updates
+        - spelling_fixes
+        - non_behavioral_documentation_cleanup
+        - wording_changes_without_semantic_change
 
       behavior:
         - minimize_governance_interruption
@@ -164,7 +219,28 @@ activation_policy:
         - evaluate_runtime_risk
         - evaluate_human_governance
 
-  escalation_rules:
+  suppression_conditions:
+
+    suppress_or_keep_lightweight_if:
+      - task_is_formatting_only
+      - task_is_spelling_or_typo_fix
+      - task_is_minor_wording_without_semantic_change
+      - task_is_non_behavioral_documentation_cleanup
+      - architecture_does_not_change
+      - runtime_boundaries_do_not_change
+      - activation_semantics_do_not_change
+      - memory_policy_does_not_change
+      - tool_policy_does_not_change
+      - automation_scope_does_not_change
+
+    do_not_suppress_if:
+      - small_change_alters_operational_behavior
+      - small_change_alters_activation_semantics
+      - small_change_alters_runtime_boundaries
+      - small_change_reduces_human_auditability
+      - small_change_introduces_hidden_state
+
+  blocking_rules:
 
     require_human_review_if:
       - destructive_runtime_behavior_exists

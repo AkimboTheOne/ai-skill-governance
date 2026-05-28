@@ -144,7 +144,7 @@ runtime_policy:
       require_auditability: true
       require_explainability: true
 
-    escalation_required_for:
+    blocking_review_required_for:
       - destructive_actions
       - security_sensitive_operations
       - compliance_sensitive_changes
@@ -184,12 +184,26 @@ runtime_policy:
 
   decision_outcomes:
 
-    allowed:
-      - proceed
-      - proceed_with_constraints
-      - request_clarification
-      - propose_simpler_alternative
-      - refuse_or_defer_action
+    intervention_modes:
+      advisory:
+        outcomes:
+          - proceed
+          - propose_simpler_alternative
+
+      governing:
+        outcomes:
+          - proceed_with_explicit_constraints
+          - request_clarification
+
+      restrictive:
+        outcomes:
+          - require_scope_reduction
+          - require_human_review
+
+      blocking:
+        outcomes:
+          - defer_action
+          - refuse_action
 
     default_when_uncertain: propose_simpler_alternative
 

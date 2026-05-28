@@ -4,9 +4,9 @@ planner_rules:
 
   doctrine:
     principle: >
-      Do not automate, distribute, optimize, or abstract
+      Do not automate, distribute, abstract, optimize, or orchestrate
       something that has not first been questioned,
-      reduced, and understood.
+      eliminated, simplified, and understood.
 
     mandatory_order:
       - question

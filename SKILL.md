@@ -1,61 +1,19 @@
-# SKILL.md
-
 # AI Skill Governance
 
-## Purpose
+## Description
 
-This skill defines a cognitive governance rail for designing, building, reviewing, and evolving AI skills.
+Governance skill for designing, reviewing, and evolving AI skills, planner rules,
+runtime policies, activation semantics, and automation readiness.
 
-It helps agents and human operators:
-
-- define skill boundaries,
-- reject unnecessary complexity,
-- apply planning discipline,
-- preserve runtime governance,
-- evaluate automation readiness,
-- and evolve skills without architectural drift.
-
-This skill is not intended to execute domain work directly.
-
-It is intended to guide how skills should be reasoned about, constrained, reviewed, and improved.
-
----
-
-## Core Identity
-
-`ai-skill-governance` is a support skill for skill engineering.
-
-It exists to assist agents in:
-
-- defining new skills,
-- reviewing existing skills,
-- improving skill maturity,
-- identifying architectural drift,
-- evaluating runtime risk,
-- and preserving human-governable AI systems.
-
-It should function as:
-
-- a cognitive rail,
-- a planning constraint layer,
-- a complexity governance reference,
-- and an architectural review companion.
-
-It should not become:
-
-- a general-purpose orchestration engine,
-- an autonomous agent runtime,
-- a framework platform,
-- a code generator by default,
-- or a substitute for human architectural judgment.
+This skill keeps skill work stable, controllable, repeatable, auditable, and
+human-governable. It is a governance layer, not a runtime engine.
 
 ---
 
 ## Core Doctrine
 
-> Do not automate, distribute, abstract, optimize, or orchestrate something that has not first been questioned, reduced, simplified, and understood.
-
-Complexity is not value.
+> Do not automate, distribute, abstract, optimize, or orchestrate something that has
+> not first been questioned, eliminated, simplified, and understood.
 
 Complexity is operational cost unless continuously justified.
 
@@ -75,79 +33,220 @@ Do not optimize before simplification.
 
 Do not automate before stability.
 
-Do not introduce sophistication without clear operational need.
+---
+
+## Normative Language
+
+- `must` defines a hard constraint.
+- `should` defines default behavior unless a documented exception applies.
+- `may` defines optional behavior.
+
+When a requirement conflicts with a default, the hard constraint wins.
 
 ---
 
-## Activation Intent
+## When to Use
 
-This skill should activate when the user or agent is working on:
+Use this skill before implementation planning when a request involves:
 
-- defining a skill,
-- reviewing a skill,
-- improving a skill,
-- creating a skill charter,
-- designing agent instructions,
-- designing runtime policies,
+- creating, modifying, or reviewing a skill,
+- changing `SKILL.md` or `AGENTS.md`,
 - designing planner rules,
-- defining activation semantics,
-- introducing automation,
+- designing runtime policies,
+- defining activation conditions,
+- changing memory strategy,
 - adding tools,
-- adding memory,
-- adding orchestration,
+- introducing automation,
+- introducing orchestration,
 - evaluating RAG,
+- evaluating vector databases,
 - evaluating multi-agent behavior,
-- or changing skill architecture.
+- or expanding architecture.
 
-This skill should remain lightweight when the task is:
-
-- simple content editing,
-- formatting,
-- minor wording improvement,
-- or low-risk documentation cleanup.
+Keep this skill lightweight for formatting, typo fixes, minor wording updates, and
+low-risk documentation cleanup that does not change behavior, activation, runtime
+policy, memory, tooling, automation, or architecture.
 
 ---
 
-## Primary Responsibilities
+## Activation
 
-This skill is responsible for helping with:
+This skill activates as a planning and governance constraint before execution.
 
-### Skill Definition
+It should influence reasoning before implementation details are chosen. Its role is
+to question necessity, reduce complexity, preserve auditability, and prevent
+premature automation.
 
-- clarify purpose,
-- define scope,
-- identify non-goals,
-- establish operating boundaries,
-- define expected behavior,
-- identify required references,
-- and specify activation conditions.
+---
 
-### Skill Construction
+## Automatic Activation Conditions
 
-- propose minimal repository structures,
-- define canonical artifacts,
-- separate doctrine from runtime policy,
-- separate references from activators,
-- avoid premature code,
-- and preserve documentation-first evolution.
+Activate automatically when work touches:
 
-### Skill Review
+- `SKILL.md`,
+- `AGENTS.md`,
+- `planner-rules.yaml`,
+- `runtime-policy.yaml`,
+- `activation-policy.yaml`,
+- skill charters,
+- review checklists,
+- memory policy,
+- tool policy,
+- orchestration,
+- automation,
+- RAG,
+- vector databases,
+- multi-agent systems,
+- recursive agent behavior,
+- background execution,
+- hidden persistent state,
+- or runtime side effects.
 
-- evaluate complexity,
-- detect overengineering,
-- identify missing governance,
-- challenge vague requirements,
-- expose hidden assumptions,
-- and validate human auditability.
+---
 
-### Skill Improvement
+## Keyword Activation
 
-- propose controlled evolution,
-- identify maturity gaps,
-- refine activation semantics,
-- improve planner rules,
-- improve runtime policies,
-- and update supporting documentation consistently.
+Concrete trigger terms include:
+
+- `skill`,
+- `SKILL.md`,
+- `AGENTS.md`,
+- `planner rules`,
+- `runtime policy`,
+- `activation`,
+- `activation conditions`,
+- `automation`,
+- `orchestration`,
+- `multi-agent`,
+- `RAG`,
+- `retrieval`,
+- `vector database`,
+- `memory`,
+- `persistent memory`,
+- `background agent`,
+- `recursive agent`,
+- `tool chain`,
+- `governance`,
+- `auditability`,
+- `human override`,
+- and `runtime`.
+
+Keyword activation must consider context. Do not overactivate on incidental mentions
+that do not affect skill design, architecture, runtime behavior, memory, tools, or
+automation.
+
+---
+
+## Behavioral Activation
+
+Activate when a request would:
+
+- increase architectural scope,
+- add a new moving part,
+- add or expand tool usage,
+- introduce hidden or persistent state,
+- reduce human inspectability,
+- automate an unstable process,
+- add recursive or autonomous behavior,
+- increase context loading,
+- or make system behavior harder to audit.
+
+---
+
+## Blocking Activation
+
+Move from advisory guidance to restrictive or blocking guidance when a request
+proposes:
+
+- destructive or irreversible side effects,
+- hidden persistent state,
+- autonomous background execution,
+- recursive orchestration,
+- tool chains without clear terminal conditions,
+- RAG without demonstrated retrieval need,
+- vector databases without demonstrated retrieval need,
+- multi-agent orchestration without operational necessity,
+- framework proliferation,
+- or automation before process stability.
+
+Blocking guidance must require explicit justification, human review, or deferral
+before implementation.
+
+---
+
+## Suppression Conditions
+
+Suppress governance intervention, or keep it lightweight, when the work is limited
+to:
+
+- spelling fixes,
+- formatting changes,
+- simple wording improvements,
+- non-behavioral documentation cleanup,
+- renaming for clarity without semantic change,
+- or reviewing content without changing architecture, activation, runtime behavior,
+  memory, tooling, or automation.
+
+Suppression does not apply when a small-looking change alters operational behavior,
+activation semantics, runtime boundaries, or human governance.
+
+---
+
+## Activation Priority
+
+High priority applies to hidden state, autonomous execution, background execution,
+recursive orchestration, RAG, vector databases, multi-agent behavior, destructive
+side effects, runtime side effects, and automation proposals.
+
+Medium priority applies to new skills, skill upgrades, planner rule changes, runtime
+policy changes, memory strategy, tool expansion, and architecture refactoring.
+
+Low priority applies to formatting, wording, and low-risk documentation cleanup.
+
+High priority maps to restrictive guidance and may become blocking when unsafe
+automation, hidden state, irreversible side effects, or unbounded orchestration are
+proposed. Medium priority maps to governing guidance. Low priority maps to advisory
+guidance or suppression.
+
+---
+
+## Output Modes
+
+### Advisory
+
+Use for low-risk work. Identify tradeoffs, suggest simplification, and avoid
+unnecessary ceremony.
+
+### Governing
+
+Use for normal skill design and review. Apply the mandatory engineering order,
+validate boundaries, and preserve the canonical artifacts.
+
+### Restrictive
+
+Use when complexity, scope, or runtime risk is increasing. Require justification,
+recommend scope reduction, and prefer simpler alternatives.
+
+### Blocking
+
+Use when the request would introduce unsafe automation, hidden state, irreversible
+side effects, recursive orchestration, or unbounded complexity without explicit
+authorization and operational justification.
+
+---
+
+## Responsibilities
+
+This skill is responsible for:
+
+- clarifying skill purpose and boundaries,
+- defining activation conditions,
+- reviewing planner and runtime policies,
+- identifying unnecessary complexity,
+- challenging premature automation,
+- preserving human auditability,
+- recommending simpler alternatives,
+- and keeping governance artifacts consistent.
 
 ---
 
@@ -162,156 +261,70 @@ This skill does not directly own:
 - background execution,
 - multi-agent orchestration,
 - persistent hidden memory,
-- or runtime enforcement implementation.
+- runtime enforcement implementation,
+- RAG infrastructure,
+- vector database infrastructure,
+- or framework platforms.
 
-Those capabilities may be supported by other skills or tools, but this skill governs whether such additions are justified.
-
----
-
-## Architectural Preferences
-
-Prefer:
-
-- markdown-first documentation,
-- explicit contracts,
-- local reasoning,
-- human-readable memory,
-- deterministic execution paths,
-- bounded context loading,
-- simple repository structures,
-- and minimal tooling.
-
-Avoid by default:
-
-- premature `src/` directories,
-- unnecessary CLI scaffolding,
-- vector databases without retrieval need,
-- RAG without evidence,
-- multi-agent orchestration without necessity,
-- recursive tool chains,
-- hidden mutable state,
-- and framework proliferation.
+Those capabilities may be supported by other skills or tools, but this skill governs
+whether such additions are justified.
 
 ---
 
-## Reference Model
+## Hard Constraints
 
-This skill is expected to rely on these artifact families:
-
-```text
-ai-skill-governance/
-├── README.md
-├── SKILL.md
-├── AGENTS.md
-├── FOUNDATION.md
-│
-├── doctrine/
-├── governance/
-├── reviews/
-├── skills/
-├── memory/
-└── references/
-```
-
-Each folder must justify its existence.
-
-The repository should remain small until evolution demands otherwise.
+- Preserve the mandatory order: Question, Eliminate, Simplify, Accelerate,
+  Automate.
+- Do not automate unstable or unclear workflows.
+- Do not optimize before simplification.
+- Do not introduce hidden persistent state.
+- Do not introduce RAG, vector databases, recursive agents, multi-agent
+  orchestration, or framework-heavy systems without explicit operational
+  justification.
+- Preserve human visibility, auditability, reversibility, and override capability.
+- Keep state, policies, and memory human-readable unless a stronger operational need
+  is documented.
 
 ---
 
-## Cognitive Governance Rail
+## Runtime Governance
 
-The cognitive governance rail is composed of:
-
-- doctrine,
-- planning heuristics,
-- runtime constraints,
-- activation policies,
-- complexity budgets,
-- review checklists,
-- skill charters,
-- and human governance principles.
-
-The rail does not replace agent reasoning.
-
-It conditions agent reasoning.
-
----
-
-## Activation Layers
-
-This skill should distinguish between:
-
-### References
-
-Stable knowledge used for context.
-
-Examples:
-
-- foundation principles,
-- engineering doctrine,
-- anti-patterns,
-- architectural preferences.
-
-### Activators
-
-Rules that determine when governance should intervene.
-
-Examples:
-
-- user asks to add orchestration,
-- user asks to create a new skill,
-- user asks to introduce automation,
-- user proposes distributed memory,
-- user requests runtime behavior changes.
-
-### Enforcement
-
-Constraints that determine how strongly the skill should respond.
-
-Examples:
-
-- advisory,
-- warning,
-- require justification,
-- require human confirmation,
-- reject or defer.
-
----
-
-## Runtime Philosophy
-
-Runtime behavior should remain:
+Runtime behavior must remain:
 
 - explicit,
 - bounded,
 - inspectable,
 - auditable,
-- reversible where possible,
+- reversible when the action can be reversed or explicitly confirmable when it
+  cannot,
 - and human-governable.
 
-The skill should resist:
-
-- uncontrolled autonomy,
-- hidden state mutation,
-- unbounded context growth,
-- recursive execution,
-- unnecessary tool chaining,
-- and automation of unstable processes.
+This skill does not implement runtime enforcement. It governs whether proposed
+runtime behavior is justified, bounded, and understandable before implementation.
 
 ---
 
-## Human Governance
+## Canonical Artifacts
 
-Human operators must retain:
+This skill relies on these canonical artifacts:
 
-- visibility,
-- override capability,
-- execution awareness,
-- architectural control,
-- and final authority over destructive or persistent actions.
+- [README.md](README.md) for repository orientation,
+- [FOUNDATION.md](FOUNDATION.md) for reusable engineering doctrine,
+- [AGENTS.md](AGENTS.md) for agent-facing operational constraints,
+- [skill-charter.md](skill-charter.md) for this skill's concrete charter,
+- [governance/planner-rules.yaml](governance/planner-rules.yaml) for planning
+  heuristics,
+- [governance/runtime-policy.yaml](governance/runtime-policy.yaml) for runtime
+  boundaries,
+- [governance/activation-policy.yaml](governance/activation-policy.yaml) for
+  activation policy,
+- [reviews/checklist.md](reviews/checklist.md) for review criteria,
+- [skills/templates/skill-charter.template.md](skills/templates/skill-charter.template.md)
+  for future skill charters,
+- [memory/README.md](memory/README.md) for memory boundaries,
+- and [references/README.md](references/README.md) for governed reference material.
 
-If humans cannot understand what changed, why it changed, and what risk was introduced, the skill has failed.
+Root-level duplicates of governed policies should not be created.
 
 ---
 
@@ -334,31 +347,16 @@ Do not add runtime behavior until activation and enforcement semantics are clear
 
 ## Quality Bar
 
-A good output from this skill should:
+A good output from this skill should reduce complexity, clarify boundaries, improve
+decision quality, expose unjustified assumptions, and preserve human governance.
 
-- reduce complexity,
-- clarify boundaries,
-- improve decision quality,
-- expose tradeoffs,
-- identify unjustified assumptions,
-- preserve human governance,
-- and produce artifacts that agents can actually use.
-
-A bad output from this skill:
-
-- adds ceremony,
-- creates generic frameworks,
-- hides complexity,
-- overuses YAML,
-- introduces runtime before doctrine,
-- or makes the skill harder to govern than the skills it supports.
+A bad output adds ceremony, creates generic frameworks, hides complexity, overuses
+YAML, introduces runtime before doctrine, or makes the skill harder to govern than
+the skills it supports.
 
 ---
 
 ## Final Principle
 
-> A skill should reduce operational complexity faster than it creates architectural complexity.
-
-If it does not, it is no longer a skill.
-
-It is infrastructure debt.
+> A skill should reduce operational complexity faster than it creates architectural
+> complexity.

@@ -25,7 +25,7 @@ These principles exist to:
 
 ## Core Doctrine
 
-> Do not automate, distribute, abstract, or optimize something that has not first been questioned, reduced, and understood.
+> Do not automate, distribute, abstract, optimize, or orchestrate something that has not first been questioned, eliminated, simplified, and understood.
 
 Complexity is a liability unless explicitly justified.
 

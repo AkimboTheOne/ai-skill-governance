@@ -50,7 +50,7 @@ Code may be introduced later only if the documentation-based operating model pro
 
 ## Core Doctrine
 
-> Do not automate, distribute, abstract, optimize, or orchestrate something that has not first been questioned, reduced, simplified, and understood.
+> Do not automate, distribute, abstract, optimize, or orchestrate something that has not first been questioned, eliminated, simplified, and understood.
 
 Complexity is not value.
 
@@ -74,9 +74,31 @@ Do not automate before stability.
 
 ---
 
+## Intellectual Influences
+
+This repository is inspired by several engineering and operational traditions:
+
+- [Elon Musk's five-step engineering algorithm](https://insideevs.com/news/526954/elon-musk-5-steps-success/):
+  question requirements, delete, simplify, accelerate, automate.
+- [Toyota Production System](https://global.toyota/en/company/vision-and-philosophy/production-system/index.html):
+  waste reduction, flow, jidoka, just-in-time, and kaizen.
+- [Lean Thinking](https://www.lean.org/lexicon-terms/lean-thinking-and-practice/):
+  value, value stream, flow, pull, and continuous improvement.
+- [Theory of Constraints](https://www.tocinstitute.org/five-focusing-steps.html):
+  focus improvement on the system constraint before optimizing locally.
+- [Systems Thinking](https://donellameadows.org/archives/leverage-points-places-to-intervene-in-a-system/):
+  preserve visibility into feedback loops, leverage points, and unintended
+  consequences.
+
+These influences are not treated as rigid doctrine. They inform the repository's
+governance posture: question first, remove unnecessary complexity, simplify what
+remains, accelerate only stable systems, and automate last.
+
+---
+
 ## Repository Structure
 
-Target structure:
+Canonical structure:
 
 ```text
 ai-skill-governance/
@@ -84,15 +106,12 @@ ai-skill-governance/
 ├── SKILL.md
 ├── FOUNDATION.md
 ├── AGENTS.md
-│
-├── doctrine/
-│   └── engineering-bedrock.md
+├── skill-charter.md
 │
 ├── governance/
 │   ├── planner-rules.yaml
 │   ├── runtime-policy.yaml
-│   ├── activation-policy.yaml
-│   └── complexity-budget.yaml
+│   └── activation-policy.yaml
 │
 ├── reviews/
 │   └── checklist.md
@@ -102,13 +121,18 @@ ai-skill-governance/
 │       └── skill-charter.template.md
 │
 ├── memory/
-│   └── decisions/
+│   └── README.md
 │
 └── references/
-    └── musk-engineering-rules.md
+    └── README.md
 ```
 
-The structure should remain small until additional artifacts justify their existence.
+The structure should remain small until additional artifacts justify their
+existence.
+
+Root-level duplicates such as `planner-rules.yaml`, `runtime-policy.yaml`, or
+`checklist.md` are intentionally avoided. The canonical paths are the governed
+subdirectories listed above.
 
 ---
 
@@ -116,14 +140,31 @@ The structure should remain small until additional artifacts justify their exist
 
 | Artifact | Purpose |
 |---|---|
-| `SKILL.md` | Defines this skill's operating identity and boundaries. |
-| `FOUNDATION.md` | Defines reusable engineering doctrine. |
-| `AGENTS.md` | Defines agent-facing operational constraints. |
-| `governance/planner-rules.yaml` | Defines planning heuristics and complexity governance. |
-| `governance/runtime-policy.yaml` | Defines runtime execution boundaries. |
-| `governance/activation-policy.yaml` | Defines when and how governance activates. |
-| `reviews/checklist.md` | Defines review criteria before implementation or automation. |
-| `skills/templates/skill-charter.template.md` | Defines the standard charter for future skills. |
+| [SKILL.md](SKILL.md) | Defines this skill's operating identity, activation contract, and boundaries. |
+| [FOUNDATION.md](FOUNDATION.md) | Defines reusable engineering doctrine. |
+| [AGENTS.md](AGENTS.md) | Defines agent-facing operational constraints. |
+| [skill-charter.md](skill-charter.md) | Defines the concrete charter for this repository's skill. |
+| [governance/planner-rules.yaml](governance/planner-rules.yaml) | Defines planning heuristics and complexity governance. |
+| [governance/runtime-policy.yaml](governance/runtime-policy.yaml) | Defines runtime execution boundaries. |
+| [governance/activation-policy.yaml](governance/activation-policy.yaml) | Defines when and how governance activates. |
+| [reviews/checklist.md](reviews/checklist.md) | Defines review criteria before implementation or automation. |
+| [skills/templates/skill-charter.template.md](skills/templates/skill-charter.template.md) | Defines the standard charter for future skills. |
+| [memory/README.md](memory/README.md) | Defines the boundary between canonical and installation memory. |
+| [references/README.md](references/README.md) | Defines how stable references may be added without creating uncontrolled context. |
+
+---
+
+## Artifact Relationships
+
+`SKILL.md` is the operational entrypoint for Codex. It should stay concise and
+delegate detail to the canonical artifacts.
+
+`FOUNDATION.md`, `AGENTS.md`, and `skill-charter.md` define identity and doctrine.
+
+The `governance/` files define planner, runtime, and activation policy.
+
+The `reviews/`, `skills/templates/`, `memory/`, and `references/` directories
+support review, future skill creation, memory boundaries, and governed references.
 
 ---
 
