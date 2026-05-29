@@ -213,6 +213,19 @@ Do not introduce architecture that is more complex than the problem being solved
 
 ---
 
+## Memory Governance
+
+When working with governance memory, follow `memory/README.md`.
+
+Do not write repo-specific, user-specific, or organization-specific context into
+canonical skill memory.
+
+Promote local or global memory into canonical skill memory only with explicit
+human approval, and only when the learning is reusable, non-confidential, and
+aligned with the shared doctrine.
+
+---
+
 ## Planning Constraints
 
 Before introducing new components, ask:

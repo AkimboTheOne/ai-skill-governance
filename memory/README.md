@@ -103,7 +103,10 @@ local exceptions.
 
 ---
 
-## Repository Memory Structure
+## Reserved Repository Memory Structure
+
+The canonical skill repository may use this structure when real, reusable skill
+memory exists:
 
 ```text
 memory/
@@ -114,6 +117,10 @@ memory/
 ├── evolution/
 └── installation-template/
 ```
+
+These directories are reserved extension points, not required empty folders.
+Do not create them until there is auditable content that justifies their
+existence.
 
 ---
 

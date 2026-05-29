@@ -55,30 +55,49 @@ activation_policy:
 
   activation_triggers:
 
-    concrete_terms:
+    contextual_terms:
       - skill
+      - activation
+      - retrieval
+      - memory
+      - governance
+      - auditability
+      - human override
+      - runtime
+
+    structural_triggers:
       - SKILL.md
       - AGENTS.md
       - planner rules
       - runtime policy
       - activation conditions
+      - memory policy
+      - tool policy
       - automation
       - orchestration
       - multi-agent
       - RAG
-      - retrieval
       - vector database
-      - memory
       - persistent memory
-      - memory precedence
-      - global user memory
-      - doctrinal promotion
       - background agent
       - recursive agent
       - tool chain
-      - governance
-      - auditability
-      - human override
+
+    memory_triggers:
+      - memory precedence
+      - global user memory
+      - doctrinal promotion
+
+    restrictive_triggers:
+      - hidden persistent state
+      - autonomous background execution
+      - recursive orchestration
+      - tool chains without clear terminal conditions
+      - RAG without demonstrated retrieval need
+      - vector databases without demonstrated retrieval need
+      - multi-agent orchestration without operational necessity
+      - framework proliferation
+      - automation before process stability
 
     high_priority:
       - multi_agent_design
@@ -196,6 +215,15 @@ activation_policy:
 
   contextual_behavior:
 
+    contextual_review:
+      applies_to:
+        - contextual_terms
+
+      behavior:
+        - inspect_surrounding_request
+        - avoid_strong_intervention_for_incidental_mentions
+        - escalate_only_when_behavior_or_governance_changes
+
     lightweight_mode:
       applies_to:
         - editing
@@ -250,6 +278,12 @@ activation_policy:
       - destructive_runtime_behavior_exists
       - irreversible_side_effects_exist
       - autonomous_background_execution_exists
+      - automation_precedes_process_stability
+      - tool_chain_has_no_clear_terminal_condition
+      - rag_lacks_demonstrated_retrieval_need
+      - vector_database_lacks_demonstrated_retrieval_need
+      - multi_agent_orchestration_lacks_operational_necessity
+      - framework_proliferation_is_proposed
       - architecture_scope_expands_significantly
       - persistent_hidden_memory_is_introduced
       - governance_boundaries_become_unclear
