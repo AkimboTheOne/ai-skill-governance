@@ -121,7 +121,9 @@ ai-skill-governance/
 │       └── skill-charter.template.md
 │
 ├── memory/
-│   └── README.md
+│   ├── README.md
+│   └── learnings/
+│       └── doctrine-projection.md
 │
 └── references/
     └── README.md
@@ -156,12 +158,22 @@ subdirectories listed above.
 
 ## Artifact Relationships
 
-`SKILL.md` is the operational entrypoint for Codex. It should stay concise and
-delegate detail to the canonical artifacts.
+`FOUNDATION.md` defines the shared doctrine. `SKILL.md`, `AGENTS.md`,
+`governance/*.yaml`, `reviews/checklist.md`, and `memory/README.md` are
+context-specific projections of that doctrine. They must not introduce competing
+doctrine.
 
-`FOUNDATION.md`, `AGENTS.md`, and `skill-charter.md` define identity and doctrine.
+`SKILL.md` is the operational entrypoint for Codex. It defines how the skill is
+used, when it activates, and what boundaries it preserves. It should stay concise
+and delegate detail to the canonical artifacts.
 
-The `governance/` files define planner, runtime, and activation policy.
+`AGENTS.md` defines how agents operate while maintaining this repository. It is
+not a separate doctrine; it must remain doctrinally equivalent to `SKILL.md`.
+
+`skill-charter.md` defines the concrete charter for this repository's skill.
+
+The `governance/` files define planner, runtime, and activation policy derived
+from the shared doctrine.
 
 The `reviews/`, `skills/templates/`, `memory/`, and `references/` directories
 support review, future skill creation, memory boundaries, precedence, doctrinal

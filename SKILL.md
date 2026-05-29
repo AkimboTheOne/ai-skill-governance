@@ -82,6 +82,10 @@ It should influence reasoning before implementation details are chosen. Its role
 to question necessity, reduce complexity, preserve auditability, and prevent
 premature automation.
 
+Activation must be proportional. Detect the governance risk, apply the minimum
+intervention sufficient for that risk, and keep the primary task moving when a
+change is non-behavioral or low risk.
+
 ---
 
 ## Automatic Activation Conditions
@@ -111,30 +115,45 @@ Activate automatically when work touches:
 
 ## Keyword Activation
 
-Concrete trigger terms include:
+Keyword activation is contextual. Broad terms should prompt review of the
+surrounding request, not strong intervention by themselves.
+
+Broad contextual terms include:
 
 - `skill`,
-- `SKILL.md`,
-- `AGENTS.md`,
-- `planner rules`,
-- `runtime policy`,
 - `activation`,
-- `activation conditions`,
-- `automation`,
-- `orchestration`,
-- `multi-agent`,
-- `RAG`,
 - `retrieval`,
-- `vector database`,
 - `memory`,
-- `persistent memory`,
-- `background agent`,
-- `recursive agent`,
-- `tool chain`,
 - `governance`,
 - `auditability`,
 - `human override`,
 - and `runtime`.
+
+Structural and restrictive triggers include:
+
+- `SKILL.md`,
+- `AGENTS.md`,
+- `planner rules`,
+- `runtime policy`,
+- `activation conditions`,
+- `memory policy`,
+- `tool policy`,
+- `automation`,
+- `orchestration`,
+- `multi-agent`,
+- `RAG`,
+- `vector database`,
+- `persistent memory`,
+- `background agent`,
+- `recursive agent`,
+- `tool chain`,
+- `hidden persistent state`,
+- `autonomous background execution`,
+- `recursive orchestration`,
+- and `automation before process stability`.
+
+Use [governance/activation-policy.yaml](governance/activation-policy.yaml) as the
+canonical trigger taxonomy.
 
 Keyword activation must consider context. Do not overactivate on incidental mentions
 that do not affect skill design, architecture, runtime behavior, memory, tools, or
@@ -333,6 +352,9 @@ This skill relies on these canonical artifacts:
 - [memory/README.md](memory/README.md) for memory boundaries, precedence, and
   doctrinal promotion candidate handling,
 - and [references/README.md](references/README.md) for governed reference material.
+
+These artifacts are context-specific projections of the shared doctrine in
+`FOUNDATION.md`. They must not introduce competing doctrine.
 
 Root-level duplicates of governed policies should not be created.
 
