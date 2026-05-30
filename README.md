@@ -158,7 +158,7 @@ subdirectories listed above.
 
 ## Artifact Relationships
 
-`FOUNDATION.md` defines the shared doctrine. `SKILL.md`, `AGENTS.md`,
+`FOUNDATION.md` defines the shared doctrine. `SKILL.md`,
 `governance/*.yaml`, `reviews/checklist.md`, and `memory/README.md` are
 context-specific projections of that doctrine. They must not introduce competing
 doctrine.
@@ -167,8 +167,13 @@ doctrine.
 used, when it activates, and what boundaries it preserves. It should stay concise
 and delegate detail to the canonical artifacts.
 
-`AGENTS.md` defines how agents operate while maintaining this repository. It is
-not a separate doctrine; it must remain doctrinally equivalent to `SKILL.md`.
+`AGENTS.md` defines the repository's local operational reference. It governs
+project-specific maintenance and usage constraints without becoming a required
+input to `SKILL.md`.
+
+`SKILL.md` and `AGENTS.md` share the same foundation, but they serve different
+roles. `SKILL.md` remains self-contained as the skill interface; `AGENTS.md`
+remains the authoritative local project reference.
 
 `skill-charter.md` defines the concrete charter for this repository's skill.
 

@@ -1,6 +1,6 @@
 ---
 name: ai-skill-governance
-description: Governance skill for designing, reviewing, and evolving AI skills, AGENTS.md instructions, planner rules, runtime policies, activation semantics, memory strategy, tool usage, automation readiness, orchestration, RAG, vector databases, multi-agent behavior, and human-governable AI systems. Use before implementation planning when work may increase architecture, runtime behavior, hidden state, tooling, automation, or operational complexity.
+description: Governance skill for designing, reviewing, and evolving AI skills, planner rules, runtime policies, activation semantics, memory strategy, tool usage, automation readiness, orchestration, RAG, vector databases, multi-agent behavior, and human-governable AI systems. Use before implementation planning when work may increase architecture, runtime behavior, hidden state, tooling, automation, or operational complexity. Use when reviewing AGENTS.md as a project-local operational reference, not as a required dependency of the skill.
 ---
 
 # AI Skill Governance
@@ -55,7 +55,7 @@ When a requirement conflicts with a default, the hard constraint wins.
 Use this skill before implementation planning when a request involves:
 
 - creating, modifying, or reviewing a skill,
-- changing `SKILL.md` or `AGENTS.md`,
+- changing `SKILL.md` or project-local operational references,
 - designing planner rules,
 - designing runtime policies,
 - defining activation conditions,
@@ -338,7 +338,6 @@ This skill relies on these canonical artifacts:
 
 - [README.md](README.md) for repository orientation,
 - [FOUNDATION.md](FOUNDATION.md) for reusable engineering doctrine,
-- [AGENTS.md](AGENTS.md) for agent-facing operational constraints,
 - [skill-charter.md](skill-charter.md) for this skill's concrete charter,
 - [governance/planner-rules.yaml](governance/planner-rules.yaml) for planning
   heuristics,
@@ -355,6 +354,10 @@ This skill relies on these canonical artifacts:
 
 These artifacts are context-specific projections of the shared doctrine in
 `FOUNDATION.md`. They must not introduce competing doctrine.
+
+`AGENTS.md` is a project-local operational reference when present. It can inform
+repo maintenance, but `SKILL.md` must remain usable without depending on it as a
+canonical artifact.
 
 Root-level duplicates of governed policies should not be created.
 

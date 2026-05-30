@@ -17,10 +17,8 @@ shared doctrine and narrowing the context-specific artifact.
 
 This learning came from reviewing `ai-skill-governance` itself. Treating
 `SKILL.md` and `AGENTS.md` as competing authorities created an unnecessary
-precedence question. The better model is that `SKILL.md` governs skill use and
-activation, while `AGENTS.md` governs agent operation and maintenance in the repo.
-Both must remain doctrinally equivalent because both project the same shared
-doctrine.
+precedence question. The better model is that `SKILL.md` stays self-contained
+for skill use and activation, while `AGENTS.md` serves local repo operations.
 
 ## Governance Notes
 

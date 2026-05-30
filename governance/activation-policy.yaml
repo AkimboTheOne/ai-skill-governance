@@ -12,7 +12,9 @@ activation_policy:
     philosophy: >
       Governance should activate proportionally to
       architectural risk, operational ambiguity,
-      and complexity exposure.
+      and complexity exposure, while keeping
+      `SKILL.md` self-contained and treating
+      `AGENTS.md` as a local project reference.
 
     avoid:
       - constant_governance_noise
@@ -25,12 +27,13 @@ activation_policy:
     cognitive:
       description: >
         Influences reasoning, planning, architecture,
-        and complexity evaluation.
+        and complexity evaluation. `SKILL.md` remains
+        self-contained; `AGENTS.md` is only a local
+        project reference when present.
 
       artifacts:
         - FOUNDATION.md
         - SKILL.md
-        - AGENTS.md
         - skill-charter.md
         - governance/planner-rules.yaml
 

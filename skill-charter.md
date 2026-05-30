@@ -64,6 +64,10 @@ This skill may advise, govern, restrict, or block proposed changes when they wou
 increase complexity, reduce auditability, expand runtime behavior, or automate an
 unstable process.
 
+This charter remains self-contained. Local project references such as `AGENTS.md`
+may inform repository operations, but they are not required to interpret this
+charter.
+
 It should remain lightweight for formatting, wording, and low-risk documentation
 cleanup that does not change architecture, activation, runtime behavior, memory,
 tooling, or automation.

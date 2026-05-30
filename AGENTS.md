@@ -2,6 +2,9 @@
 
 # Agent Operational Constraints
 
+This file is the local operational reference for this repository. It stands on
+its own and does not depend on `SKILL.md` for its authority or interpretation.
+
 ## Purpose
 
 This agent exists to:
