@@ -40,6 +40,83 @@ Do not automate before stability.
 
 ---
 
+## Operational Primitives
+
+Use these actions as the skill's mechanical behavior. Apply them in sequence
+when relevant, and stop as soon as the needed decision is reached.
+
+### 1. Question
+
+- Apply when a request, assumption, boundary, or desired outcome is unclear.
+- Evaluate necessity, ownership, actual problem, and expected operational value.
+- Produce a validated requirement, a narrowed question, or a removal candidate.
+- Stop when the requirement is justified or rejected.
+
+### 2. Eliminate
+
+- Apply after the requirement is understood.
+- Evaluate duplicates, unused abstractions, redundant tooling, and unnecessary orchestration.
+- Produce a removal or merge decision before proposing additions.
+- Stop when the remaining work is the smallest viable scope.
+
+### 3. Simplify
+
+- Apply after elimination.
+- Evaluate whether the workflow is explicit, deterministic, auditable, and locally understandable.
+- Produce a simpler structure, contract, or explanation with fewer moving parts.
+- Stop when simplification would start removing required capability.
+
+### 4. Bound Scope
+
+- Apply before implementation planning.
+- Evaluate in-scope and out-of-scope behavior, ownership, and target surfaces.
+- Produce a clear boundary that prevents drift, scope creep, and accidental expansion.
+- Stop when the boundary is explicit enough to govern execution.
+
+### 5. Check Stability
+
+- Apply before acceleration or automation.
+- Evaluate whether the process, inputs, outputs, and failure modes are stable enough to proceed.
+- Produce a stability judgment and defer acceleration if the workflow is still ambiguous.
+- Stop when instability is the dominant risk.
+
+### 6. Assess Governance Risk
+
+- Apply whenever hidden state, autonomy, orchestration, side effects, or expanded tooling are proposed.
+- Evaluate auditability, reversibility, human control, and operational ambiguity.
+- Produce a risk level that selects advisory, governing, restrictive, or blocking behavior.
+- Stop when the request crosses into unjustified hidden state or unsafe automation.
+
+### 7. Request Justification
+
+- Apply when the proposal increases complexity, runtime scope, or operational risk.
+- Evaluate whether the user can justify the need, cost, and control model.
+- Produce a concrete justification request focused on necessity and reversibility.
+- Stop when the justification is sufficient or the work is deferred.
+
+### 8. Choose the Minimum Intervention
+
+- Apply after risk is assessed.
+- Evaluate the least intervention that preserves clarity, auditability, and human governance.
+- Produce the weakest effective mode: advisory, governing, restrictive, or blocking.
+- Stop when the chosen intervention is sufficient to protect the system.
+
+### 9. Preserve Auditability
+
+- Apply throughout planning, review, and runtime boundary setting.
+- Evaluate whether decisions, inputs, outputs, and side effects remain human-readable and traceable.
+- Produce explicit contracts, constraints, and decision records.
+- Stop when the change would hide behavior or make governance opaque.
+
+### 10. Decide Promotion or Deferral
+
+- Apply when a local learning, rule, or pattern could become reusable doctrine.
+- Evaluate whether the learning is reusable, non-confidential, and aligned with the core doctrine.
+- Produce either a promotion candidate or a deliberate deferral.
+- Stop when the candidate is only a local preference or lacks evidence.
+
+---
+
 ## Normative Language
 
 - `must` defines a hard constraint.
@@ -264,6 +341,7 @@ authorization and operational justification.
 This skill is responsible for:
 
 - clarifying skill purpose and boundaries,
+- applying the operational primitives mechanically and consistently,
 - defining activation conditions,
 - reviewing planner and runtime policies,
 - identifying unnecessary complexity,
